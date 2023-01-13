@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallSocket", "src\WallSocket\WallSocket.csproj", "{D6302545-198C-4C4C-9221-679CDB245C46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallOutlet", "src\WallOutlet\WallOutlet.csproj", "{D6302545-198C-4C4C-9221-679CDB245C46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
