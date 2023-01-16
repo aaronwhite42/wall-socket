@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallOutletApp", "src\WallOutletApp\WallOutletApp.csproj", "{D6302545-198C-4C4C-9221-679CDB245C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallOutletApp.Tests", "test\WallOutletApp.Tests\WallOutletApp.Tests.csproj", "{A1739C8A-C7F6-46A9-BC9D-071950F28F72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6302545-198C-4C4C-9221-679CDB245C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6302545-198C-4C4C-9221-679CDB245C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6302545-198C-4C4C-9221-679CDB245C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6302545-198C-4C4C-9221-679CDB245C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1739C8A-C7F6-46A9-BC9D-071950F28F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1739C8A-C7F6-46A9-BC9D-071950F28F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1739C8A-C7F6-46A9-BC9D-071950F28F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1739C8A-C7F6-46A9-BC9D-071950F28F72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
