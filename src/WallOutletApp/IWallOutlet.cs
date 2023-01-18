@@ -5,6 +5,8 @@ public interface IWallOutlet
     ISwitch Switch { get; }
     ISocket Socket { get; }
 
+    bool IsLive { get; }
+
 }
 
 public class WallOutlet : IWallOutlet
@@ -17,5 +19,5 @@ public class WallOutlet : IWallOutlet
 
     public ISwitch Switch { get; }
     public ISocket Socket { get; }
-
+    public bool IsLive => Switch.IsOn && Socket.IsConnected;
 }

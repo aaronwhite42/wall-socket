@@ -1,4 +1,6 @@
-﻿namespace WallOutletApp;
+﻿using System.Net.NetworkInformation;
+
+namespace WallOutletApp;
 
 public interface IPlug
 {
