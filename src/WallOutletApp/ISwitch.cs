@@ -1,6 +1,9 @@
-﻿namespace WallOutletApp;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-public interface ISwitch
+namespace WallOutletApp;
+
+public interface ISwitch : IComponent
 {
     void Flick();
     bool IsOn { get; }
@@ -8,10 +11,22 @@ public interface ISwitch
 
 public class Switch : ISwitch
 {
+    public event EventHandler<StateChangedEventArgs>? StateChanged;
+    private bool isOn;
+
     public void Flick()
     {
         IsOn = !IsOn;
     }
 
-    public bool IsOn { get; private set; }
+    public bool IsOn
+    {
+        get => isOn;
+        private set
+        {
+            if (isOn == value) return;
+            isOn = value;
+            StateChanged?.Invoke(null, new StateChangedEventArgs{IsOn = isOn});
+        }
+    }
 }

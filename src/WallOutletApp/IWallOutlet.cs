@@ -12,6 +12,8 @@ public class WallOutlet : IWallOutlet
     {
         Switch = @switch;
         Socket = socket;
+
+        Switch.StateChanged += (sender, args) => Socket.HandleStateChanged(sender, args);
     }
 
     public ISwitch Switch { get; }

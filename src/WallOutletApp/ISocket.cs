@@ -1,6 +1,8 @@
-﻿namespace WallOutletApp;
+﻿using System.ComponentModel;
 
-public interface ISocket
+namespace WallOutletApp;
+
+public interface ISocket : IConnection
 {
     void Connect(IPlug plug);
     bool IsConnected { get; }
@@ -9,13 +11,24 @@ public interface ISocket
 
 public class Socket : ISocket
 {
-    public bool IsConnected { get; private set; }
+    public bool IsConnected => plug != null;
+    private IPlug? plug;
+    private bool isOn;
+
     public void Connect(IPlug plug)
     {
-        IsConnected = true;
+        this.plug = plug;
+        this.plug?.HandleStateChanged(null, new StateChangedEventArgs{IsOn = isOn});
     }
     public void Disconnect(IPlug plug)
     {
-        IsConnected = false;
+        this.plug?.HandleStateChanged(null, new StateChangedEventArgs{IsOn = false});
+        this.plug = null;
+    }
+
+    public void HandleStateChanged(object? sender, StateChangedEventArgs args)
+    {
+        plug?.HandleStateChanged(sender, args);
+        isOn = args.IsOn;
     }
 }

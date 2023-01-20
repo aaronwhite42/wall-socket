@@ -1,12 +1,16 @@
 ﻿namespace WallOutletApp;
 
-public interface IPlug
+public interface IPlug : IConnection, IComponent
 {
-    IPin Positive { get; }
-    IPin Negative { get; }
-    IPin Ground { get; }
+
 }
 
-public interface IPin
+public class Plug : IPlug
 {
+    public void HandleStateChanged(object? sender, StateChangedEventArgs args)
+    {
+        StateChanged?.Invoke(sender, args);
+    }
+
+    public event EventHandler<StateChangedEventArgs>? StateChanged;
 }
