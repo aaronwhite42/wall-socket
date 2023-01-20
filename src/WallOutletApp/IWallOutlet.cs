@@ -4,7 +4,6 @@ public interface IWallOutlet
 {
     ISwitch Switch { get; }
     ISocket Socket { get; }
-
 }
 
 public class WallOutlet : IWallOutlet
@@ -17,5 +16,4 @@ public class WallOutlet : IWallOutlet
 
     public ISwitch Switch { get; }
     public ISocket Socket { get; }
-
 }

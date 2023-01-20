@@ -6,10 +6,17 @@ namespace WallOutletApp.Tests;
 public class TestDrive
 {
     private readonly IWallOutlet outlet;
+    private readonly IPlug plug;
 
     public TestDrive()
     {
-        outlet = Substitute.For<IWallOutlet>();
+        // outlet = Substitute.For<IWallOutlet>();
+        // outlet = new WallOutlet(Substitute.For<ISwitch>());
+        outlet = new WallOutlet(
+            new Switch(),
+            new Socket()
+            );
+        plug = Substitute.For<IPlug>();
     }
 
     [Fact]
@@ -43,5 +50,15 @@ public class TestDrive
         outlet.Switch.Flick();
         outlet.Switch.Flick();
         outlet.Switch.IsOn.Should().BeFalse("the switch is still off");
+    }
+
+    [Fact]
+    public void TestDrivePlug()
+    {
+        outlet.Socket.Connect(plug);
+        outlet.Socket.IsConnected.Should().BeTrue();
+
+        outlet.Socket.Disconnect(plug);
+        outlet.Socket.IsConnected.Should().BeFalse();
     }
 }
